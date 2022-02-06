@@ -105,8 +105,16 @@ route.post('/blogs', (req, res) => {
         if (err)
             res.send('skl');
         else {
+            const obj ={
+                name: req.body.name,
+                rating: 0,
+                body: req.body.body,
+                category: req.body.category,
+                likes: 0,
+                userId: req.user.id
+            }
            
-            Blogs.create({ name: req.body.name,body: req.body.body, category: req.body.category, userId: 1})
+            Blogs.create(obj)
             .then( rows => res.json(rows) )
             .catch( err => res.status(500).json({ msg: "Invalid credentials"}) );
         }
