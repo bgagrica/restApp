@@ -16,7 +16,7 @@ const appCrud = express()
 const server = http.createServer(appCrud);
 const io = new Server(server, {
     cors: {
-        origin: 'http://branko-app.herokuapp.com',
+        origin: 'https://branko-app.herokuapp.com',
         methods: ['GET', 'POST'],
         credentials: true
     },
