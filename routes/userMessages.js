@@ -86,7 +86,7 @@ route.get('/blog/:category', (req,res) => {
  
 });
 
-//route.use(authToken);
+route.use(authToken);
 
 
 //CREATE ---------------------------------------
