@@ -98,7 +98,7 @@ route.post('/blogs', (req, res) => {
         name: Joi.string().trim().min(4).max(24).required(),
         body: Joi.string().trim().min(10).max(2048).required(),
         category: Joi.string().trim().min(4).max(18).required(),
-        id: Joi.number()
+   
     });
 
     sema.validate(req.body, (err, result) => {
