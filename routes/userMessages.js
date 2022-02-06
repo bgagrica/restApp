@@ -175,7 +175,7 @@ route.get('/users/:id', (req, res) => {
 });
 
 route.get('/blogs', (req, res) => {
-    if( req.user.role === "user")return res.status(500)
+    if( req.user.role == "user")return res.status(500)
     Blogs.findAll({where: { userId: req.user.id}})
         .then( rows => res.json(rows) )
         .catch( err => res.status(500).json(err) );
